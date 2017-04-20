@@ -1,23 +1,17 @@
 <?php
+require 'init.php';
+$layout = $app->layout;
+$layout ->leftMenu->addItem(['My project','icon'=>'code']);
+$form = $app->layout->add('Form');
+$form->setModel(new friends($db));	
 
-require 'vendor/autoload.php';
-$app = new \atk4\ui\App('Money lending');
+$form->onSubmit(function($form) {
+	$form->model->save();
+    return $form->success('Record updated');
+});
+$grid = $app->layout->add('CRUD');
+$grid->setModel(new friends($db));
+$grid->addAction('Money',new \atk4\ui\jsExpression('document.location="grid.php?friends_id="+$(this).closest("tr").data("id");'));
 
-$app->initLayout('Centered');
 
-$db = new
-\atk4\data\Persistence_SQL('mysql:dbname=contact;host=localhost','domik','yes');
-
-class Contact extends \atk4\data\Model {
-	public $table = 'info';
-	
-	function init() {
-		parent::init();
-		
-		$this->addField('name');
-		$this->addField('age');
-		$this->addField('email');
-		$this->addField('city');
-	}
-}
 ?>
