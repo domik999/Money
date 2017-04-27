@@ -9,8 +9,8 @@ $form->onSubmit(function($form) {
 	$form->model->save();
     return $form->success('Record updated');
 });
-$grid = $app->layout->add('CRUD');
-$grid->setModel(new friends($db));
+//$grid = $app->layout->add('CRUD');
+//$grid->setModel(new friends($db));
 //$grid->addAction('Money',new \atk4\ui\jsExpression('document.location="grid.php?friends_id="+$(this).closest("tr").data("id");'));
 
 
