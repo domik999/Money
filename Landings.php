@@ -11,7 +11,7 @@ $form->onSubmit(function($form) {
 });
 $grid = $app->layout->add('CRUD');
 $grid->setModel(new friends($db));
-$grid->addAction('Money',new \atk4\ui\jsExpression('document.location="grid.php?friends_id="+$(this).closest("tr").data("id");'));
+//$grid->addAction('Money',new \atk4\ui\jsExpression('document.location="grid.php?friends_id="+$(this).closest("tr").data("id");'));
 
 
 ?>
