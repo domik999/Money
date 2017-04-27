@@ -1,5 +1,6 @@
 <?php
-require 'lendings.php';
+//require 'lendings.php';
 
-$grid = $app->layout->add('CRUD');
-$grid->setModel(new friends($db));
+//$grid = $app->layout->add('CRUD');
+//$grid->setModel(new friends($db));
+echo 'helloworld';
